@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <style type="text/css">
+        table {border-collapse: collapse; font-size: 14px;
+             width: 80%; margin: auto}
+        table, th, td {border: 0px solid darkslategray;padding: 10px}
+        .btgn{
+            font-family: "Microsoft YaHei UI";
+            font-size: 16px;
+            color: #255e95;
+            background-color: #99CCFF;
+            text-align: center;
+        }
+
+        tr:nth-child(2n){
+            background-color:#FFCC99;
+        }
+        tr:nth-child(2n+1) {
+            background-color: #99CC99;
+        }
+
+
+    </style>
+</head>
+<body>
+<div style="text-align: center">
+    <span class="span" style="color: darkslategray; font-size: 30px" >欢迎光临！</span>
+    <hr/>
+    <table class="list">
+
+        <tr>
+            <th class="btgn">id</th>
+            <th class="btgn">姓名</th>
+            <th class="btgn">班级</th>
+            <th class="btgn">年龄</th>
+            <th class="btgn">性别</th>
+            <th class="btgn">操作</th>
+            <th class="btgn">操作</th>
+
+
+        </tr>
+
+        <tr th:each="user : ${users}">
+            <td th:text="${user.id}">1</td>
+            <td th:text="${user.name}">张三</td>
+            <td th:text="${user.classes}">zhangsan</td>
+            <td th:text="${user.age}">20</td>
+            <td th:text="${user.sex} == 1 ? '男': '女'">男</td>
+
+            <!--<td th:text="${#dates.format(user.birthday, 'yyyy-MM-dd')}">1980-02-30</td>-->
+            <!--<td th:text="${user.phone}">1</td>-->
+            <td><a th:href="@{'/delete/'+${user.id}}"><input type="submit" value="删除用户"></a></td>
+            <td><a th:href="@{'/update/'+${user.id}}"><input type="submit" value="修改用户"></a></td>
+
+        </tr>
+
+        <a href="Add1"><input type="submit" value="新增用户"></a>
+    </table>
+</div>
+</body>
+</html>

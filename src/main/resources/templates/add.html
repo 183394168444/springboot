@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <style type="text/css">
+        table {border-collapse: collapse; font-size: 14px;
+            width: 80%; margin: auto}
+        table, th, td {border: 0px solid darkslategray;padding: 10px}
+        .btgn{
+            font-family: "Microsoft YaHei UI";
+            font-size: 16px;
+            color: #255e95;
+            background-color: #99CCFF;
+            text-align: center;
+        }
+        .ccc{
+            font-family: "Microsoft YaHei UI";
+            font-size: 16px;
+            color: #255e95;
+            background-color: #ff7c76;
+            text-align: center;
+        }
+
+        tr:nth-child(2n){
+            background-color:#FFCC99;
+        }
+        tr:nth-child(2n+1) {
+            background-color: #99CC99;
+        }
+
+        .c{
+            width: 200px;
+        }
+
+    </style>
+</head>
+<body>
+<body>
+<div style="margin:122px auto; width:392px">
+    <span class="span" style="color: darkslategray; font-size: 30px" >欢迎光临半夏威风！</span><br/>
+    <span class="span" style="color: darkslategray; font-size: 30px" >添加页面！</span>
+    <form action="AddUser" method="post" class="c" th:object="${user}">
+   <!-- <form action="AddUser" method="get">-->
+        <tr><th class="btgn">学生编号:</th> <input name="id" class="btgn" th:value="${id}"/><tr/><br/>
+        <tr><th class="ccc">学生姓名:</th> <input name="name"class="ccc" th:value="${name}"/><tr/> <br/>
+        <tr><th class="btgn">学生年龄:</th> <input name="age" class="btgn"th:value="${age}"/> </tr><br/>
+        <tr><th class="ccc">学生性别:</th> <input name="sex"class="ccc" th:value="${sex}"/> </tr><br/>
+        <tr><th class="btgn">学生班级:</th> <input name="classes"class="btgn" th:value="${classes}"/></tr> <br/>
+
+
+
+        <button type="submit">提交</button>
+
+    </form>
+</div>
+</body>
+
+</html>
