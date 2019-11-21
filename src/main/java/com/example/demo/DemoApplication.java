@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @SpringBootApplication
 @EnableTransactionManagement
 @MapperScan("com.example.demo.mappers")
-@MapperScan("com.example.demo.User")
+
 public class DemoApplication {
 
     public static void main(String[] args) {

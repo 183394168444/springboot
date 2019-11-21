@@ -12,13 +12,13 @@ package com.example.demo.pojo;
  */
 
 public class User {
-        private Integer id;
+        private String id;
 
         private String name;
 
-        private Integer sex;
+        private String  sex;
 
-        private Integer age;
+        private String age;
 
         private String classes;
 
@@ -30,29 +30,29 @@ public class User {
             this.classes = classes;
         }
 
-        public Integer getSex() {
-            return sex;
-        }
+    public String getSex() {
+        return sex;
+    }
 
-        public void setSex(Integer sex) {
-            this.sex = sex;
-        }
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
 
-        public Integer getAge() {
-            return age;
-        }
+    public String getAge() {
+        return age;
+    }
 
-        public void setAge(Integer age) {
-            this.age = age;
-        }
+    public void setAge(String age) {
+        this.age = age;
+    }
 
-        public Integer getId() {
-            return id;
-        }
+    public String getId() {
+        return id;
+    }
 
-        public void setId(Integer id) {
-            this.id = id;
-        }
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -62,13 +62,28 @@ public class User {
         this.name = name;
     }
 
+/* public User(Object[] values) {
+     this.id = values[0].toString();
+     this.name = values[1].toString();
+     this.sex = values[2].toString();
+     this.age = values[3].toString();
+     this.classes = values[4].toString();
+ }*/
+/*public User(Object[] values){
+    this.id = values[0].toString();
+    this.name = values[1].toString();
+    this.sex = values[2].toString();
+    this.age = values[3].toString();
+    this.classes = values[4].toString();
+}*/
+
     @Override
     public String toString() {
         return "User{" +
-                "id=" + id +
+                "id='" + id + '\'' +
                 ", name='" + name + '\'' +
-                ", sex=" + sex +
-                ", age=" + age +
+                ", sex='" + sex + '\'' +
+                ", age='" + age + '\'' +
                 ", classes='" + classes + '\'' +
                 '}';
     }

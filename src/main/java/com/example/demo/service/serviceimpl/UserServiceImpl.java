@@ -5,6 +5,7 @@ import com.example.demo.pojo.User;
 import com.example.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -28,12 +29,20 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public int deleteById(int id) {
+    public int deleteById(String id) {
         return userMapper.deleteById(id);
     }
 
     @Override
     public int add(User user) {
         return userMapper.add(user);
+    }
+
+    @Transactional
+    @Override
+    public void saveAll(List<User> list) {
+        for (User user : list){
+            userMapper.add(user);
+        }
     }
 }

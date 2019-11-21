@@ -8,7 +8,9 @@ import java.util.List;
 public interface UserService{
     public List<User> selectUserByName();
 
-    int deleteById(@Param("id") int id);
+    int deleteById(@Param("id") String id);
 
     int add(User user);
+
+    public void saveAll(List<User> list);
 }
